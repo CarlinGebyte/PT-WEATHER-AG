@@ -1,16 +1,28 @@
 import { typesFavorites } from "../types/types";
 
-export const favoritesReducer = (state = {}, action) => {
+const initialState = {
+  favorites: [],
+};
+
+export const favoritesReducer = (state = initialState, action) => {
   switch (action.type) {
     case typesFavorites.add:
       return {
-        ...state,
-        [action.payload.id]: action.payload,
+        favorites: [action.payload],
       };
-    case typesFavorites.remove:
+    case typesFavorites.edit:
       return {
         ...state,
-        [action.payload.id]: undefined,
+      };
+    case typesFavorites.delete:
+      return {
+        favorites: state.favorites.filter(
+          (favorite) => favorite.id !== action.payload.id
+        ),
+      };
+    case typesFavorites.list:
+      return {
+        favorites: [...action.payload],
       };
     default:
       return state;

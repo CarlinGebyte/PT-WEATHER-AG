@@ -12,7 +12,18 @@ function AppRoutes() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    document.oncontextmenu = function () {
+      return false;
+    };
+    document.onkeydown = function (e) {
+      if (e.ctrlKey && e.key === "u") {
+        alert("You cannot use Ctrl+U");
+        return false;
+      }
+    };
+
     const auth = getAuth();
+
     onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
         setIsLoggedIn(true);

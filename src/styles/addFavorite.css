@@ -1,0 +1,10 @@
+#geocoderFavorite .mapboxgl-ctrl-geocoder,
+#geocoderFavorite .mapboxgl-ctrl {
+  border-radius: 100px;
+  max-width: none;
+  width: 66.66%;
+}
+.mapboxgl-ctrl-geocoder--input {
+  border-radius: 100px !important;
+  width: 100%;
+}

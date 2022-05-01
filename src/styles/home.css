@@ -1,0 +1,10 @@
+#geocoder .mapboxgl-ctrl-geocoder,
+#geocoder .mapboxgl-ctrl {
+  width: 100%;
+  box-shadow: none;
+  border-radius: 100px;
+}
+.mapboxgl-ctrl-geocoder--input {
+  border-radius: 100px !important;
+  width: 80%;
+}
