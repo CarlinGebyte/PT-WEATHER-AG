@@ -1,7 +1,21 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/yarn,visualstudiocode,node,appbuilder,firebase
+# Edit at https://www.toptal.com/developers/gitignore?templates=yarn,visualstudiocode,node,appbuilder,firebase
+
+### AppBuilder ###
+.ab/
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+firebase.json
+build
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
 
 ### Node ###
 # Logs
@@ -12,7 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-package-lock.json
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -186,7 +199,7 @@ dist
 # and uncomment the following lines
 # .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,yarn
+# End of https://www.toptal.com/developers/gitignore/api/yarn,visualstudiocode,node,appbuilder,firebase
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 

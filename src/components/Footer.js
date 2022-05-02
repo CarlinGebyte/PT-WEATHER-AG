@@ -7,7 +7,7 @@ function Footer() {
       <ul className="flex justify-center items-center lg:flex-col lg:text-center">
         <li className="w-1/5 text-2xl lg:w-full">
           <Link to="/">
-            <i className="fas -tracking-tight cursor-pointers">Try Wheater</i>
+            <i className="fas -tracking-tight cursor-pointers">Try Weather</i>
           </Link>
         </li>
         <li>

@@ -32,7 +32,7 @@ function Login() {
     dispatch(loginFacebook());
   };
   return (
-    <div className="shadow-2xl w-2/4 m-auto translate-y-1/4 text-center p-8">
+    <div className="shadow-2xl w-2/4 m-auto translate-y-1/4 text-center p-8 lg:w-3/4 md:w-5/6 ">
       <h2 className="uppercase font-semibold text-2xl">Login</h2>
       <Formik
         initialValues={{ email: "", password: "" }}
@@ -73,7 +73,7 @@ function Login() {
             </div>
             <div className="flex flex-col items-center">
               <button
-                className="w-1/3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                className="w-1/3 sm:w-2/5 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
                 type="submit"
               >
                 Login

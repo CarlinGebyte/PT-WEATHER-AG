@@ -6,6 +6,7 @@ import Moment from "react-moment";
 // import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
+import { getAuth } from "firebase/auth";
 
 Moment.globalFormat = "D MMM YYYY";
 
@@ -19,7 +20,7 @@ function Home() {
     long: initialStateW.longitude || "",
     lat: initialStateW.latitude || "",
   };
-  
+
   const [location, setLocation] = useState(initialStateL);
   const [weather, setWeather] = useState(initialStateW);
   mapboxgl.accessToken =
@@ -48,23 +49,28 @@ function Home() {
       });
     });
 
-
-
     // Clear results container when search is cleared.
     // geocoder.on("clear", () => {
     //   results.innerText = "";
     // });
   }, []);
-
+  const auth = getAuth();
   useEffect(() => {
-    if (location.long !== "" && location.lat !== "") {
-      getApi(apiWeather + location.lat + "," + location.long).then((res) => {
-        setWeather(res);
-        localStorage.setItem("weather", JSON.stringify(res));
-        console.log(res);
-      });
+    if (auth.currentUser) {
+      // if (auth.)
+      if (location.long !== "" && location.lat !== "") {
+        getApi(apiWeather + location.lat + "," + location.long).then((res) => {
+          setWeather(res);
+          localStorage.setItem("weather", JSON.stringify(res));
+        });
+      }
     }
-  }, [location]);
+    if (location.lat === '' && location.long === '') {
+      document.getElementById("home").classList.add("h-[57.3vh]");
+    } else {
+      document.getElementById("home").classList.remove("h-[57.3vh]");
+    }
+  }, [location, auth]);
 
   const handleGeolocalization = () => {
     navigator.geolocation.getCurrentPosition(
@@ -79,9 +85,8 @@ function Home() {
       }
     );
   };
-
   return (
-    <div className="">
+    <div id="home" className="w-full">
       <div
         id="geocoder"
         className="bg-[#eee] py-2 px-6 flex items-center justify-center"
