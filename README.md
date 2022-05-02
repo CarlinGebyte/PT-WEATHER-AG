@@ -33,7 +33,7 @@ To Start Server:
 
 `npm start`  
 
-To Visit App:
+To Visit App: 
 
 You need to execute this heroku app before use the app, it's an app to solve all problems with cors because of the API weather: https://cors-anywhere.herokuapp.com/corsdemo
 
@@ -43,4 +43,6 @@ You only need to click the button "Request temporary access to the demo server",
 
 `localhost:3000`  
 
+Public deploy:
+`https://pt-weather.web.app`  
 
