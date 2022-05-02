@@ -38,7 +38,6 @@ function Login() {
         initialValues={{ email: "", password: "" }}
         validationSchema={LoginSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
           dispatch(loginEmailPassAsync(values.email, values.password));
           resetForm();
         }}

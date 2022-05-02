@@ -15,7 +15,7 @@ export const logoutAsync = () => {
     signOut(auth)
       .then(({ user }) => {
         dispatch(logoutSync());
-        console.log("Adios" + user.displayName);
+        console.log("Adios " + user.displayName);
       })
       .catch((error) => {
         console.log(error);
@@ -36,10 +36,10 @@ export const loginGoogle = () => {
     const auth = getAuth();
     signInWithPopup(auth, google)
       .then(({ user }) => {
-        console.log(user, "Usuario autorizado");
+        console.log(user, " Usuario autorizado");
       })
       .catch((error) => {
-        console.warn(error, "No autorizado");
+        console.warn(error, " No autorizado");
       });
   };
 };
@@ -48,10 +48,10 @@ export const loginFacebook = () => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
-        console.log(user, "Usuario autorizado");
+        console.log(user, " Usuario autorizado");
       })
       .catch((error) => {
-        console.warn(error, "No autorizado");
+        console.warn(error, " No autorizado");
       });
   };
 };
@@ -62,7 +62,7 @@ export const loginEmailPassAsync = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(loginSync(user.email, user.password));
-        console.log("Bienvenido" + user.displayName);
+        console.log("Bienvenido " + user.displayName);
       })
       .catch((error) => {
         console.log(error);

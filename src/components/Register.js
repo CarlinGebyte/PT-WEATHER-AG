@@ -37,7 +37,6 @@ function Register() {
         initialValues={{ email: "", name: "", password1: "", password2: "" }}
         validationSchema={LoginSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
           dispatch(registerAsync(values.email, values.password1, values.name));
           resetForm();
         }}

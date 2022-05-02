@@ -14,12 +14,15 @@ function Favorites() {
   const { favorites } = useSelector((state) => state.favorites);
   useEffect(() => {
     dispatch(listAsync());
-    if (favorites.length === 0) {
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (favorites.filter(favorite => favorite.uid === getAuth().currentUser.uid).length === 0) {
       document.getElementById("favoritesCont").classList.add("h-[57.3vh]");
     } else {
       document.getElementById("favoritesCont").classList.remove("h-[57.3vh]");
     }
-  }, [dispatch, favorites]);
+  }, [favorites]);
 
   const { currentUser } = getAuth();
 

@@ -97,7 +97,6 @@ function AddFavorite() {
         onSubmit={(values, { resetForm }) => {
           favorite.name = values.name;
           favorite.description = values.description;
-          console.log(favorite);
           dispatch(addAsync(favorite));
           resetForm();
           // navigate("/");
