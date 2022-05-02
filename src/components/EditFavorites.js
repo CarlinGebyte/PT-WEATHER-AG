@@ -86,7 +86,7 @@ function EditFavorites({ modal, close }) {
                   <div className="error">{errors.description}</div>
                 ) : null}
               </div>
-              <div className="pt-4 flex justify-evenly sm:w-full" >
+              <div className="pt-4 flex justify-evenly sm:w-full">
                 <button
                   className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
                   type="submit"

@@ -3,8 +3,6 @@ import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
 import React, { useEffect, useState } from "react";
 import { getApi } from "../utils/getApi";
 import Moment from "react-moment";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
 import { getAuth } from "firebase/auth";
 
@@ -13,8 +11,6 @@ Moment.globalFormat = "D MMM YYYY";
 export const apiWeather =
   "https://api.darksky.net/forecast/88030114c5e47763a011a75e7a10c633/";
 function Home() {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const initialStateW = JSON.parse(localStorage.getItem("weather")) || {};
   const initialStateL = {
     long: initialStateW.longitude || "",
@@ -57,7 +53,6 @@ function Home() {
   const auth = getAuth();
   useEffect(() => {
     if (auth.currentUser) {
-      // if (auth.)
       if (location.long !== "" && location.lat !== "") {
         getApi(apiWeather + location.lat + "," + location.long).then((res) => {
           setWeather(res);
@@ -65,7 +60,7 @@ function Home() {
         });
       }
     }
-    if (location.lat === '' && location.long === '') {
+    if (location.lat === "" && location.long === "") {
       document.getElementById("home").classList.add("h-[57.3vh]");
     } else {
       document.getElementById("home").classList.remove("h-[57.3vh]");

@@ -36,7 +36,6 @@ export const loginGoogle = () => {
     const auth = getAuth();
     signInWithPopup(auth, google)
       .then(({ user }) => {
-        //  dispatch(loginSincronico(user.email, user.password))
         console.log(user, "Usuario autorizado");
       })
       .catch((error) => {
@@ -49,7 +48,6 @@ export const loginFacebook = () => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
-        //  dispatch(loginSincronico(user.email, user.password))
         console.log(user, "Usuario autorizado");
       })
       .catch((error) => {

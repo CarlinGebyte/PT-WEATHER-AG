@@ -10,10 +10,9 @@ import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
 
 import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
 
-import "../styles/addFavorite.css"
+import "../styles/addFavorite.css";
 
 function AddFavorite() {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ function AddFavorite() {
   const [location, setLocation] = useState(initialStateL);
   const [place, setPlace] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const id = uuid();
   const { currentUser } = getAuth();
@@ -51,9 +50,6 @@ function AddFavorite() {
       accessToken: mapboxgl.accessToken,
       types: "country,region,place,postcode,locality,neighborhood",
     });
-    // dispatch(logoutAsync());
-    // navigate("/login");
-    // geocoder.clear("#geocoder");
     geocoder.addTo("#geocoderFavorite");
 
     // const results = document.getElementById("result");
@@ -104,7 +100,7 @@ function AddFavorite() {
           console.log(favorite);
           dispatch(addAsync(favorite));
           resetForm();
-          //   navigate("/");
+          // navigate("/");
         }}
       >
         {({ errors, touched }) => (

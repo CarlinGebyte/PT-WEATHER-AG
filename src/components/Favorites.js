@@ -2,7 +2,6 @@ import { getAuth } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 import { deleteAsync, listAsync } from "../redux/actions/actionFavorites";
 import EditFavorites from "./EditFavorites";
 
@@ -20,7 +19,7 @@ function Favorites() {
     } else {
       document.getElementById("favoritesCont").classList.remove("h-[57.3vh]");
     }
-  }, [dispatch , favorites]);
+  }, [dispatch, favorites]);
 
   const { currentUser } = getAuth();
 
@@ -32,7 +31,6 @@ function Favorites() {
     setModal(true);
     setDataModal(favorite);
   };
-  // if (favorites.uid === currentUser.uid) {
   return (
     <div className="flex justify-evenly mt-4 flex-wrap px-4" id="favoritesCont">
       {favorites.map((favorite) => {
@@ -94,9 +92,6 @@ function Favorites() {
       )}
     </div>
   );
-  // } else {
-  // return <div className="h-[80%]"></div>;
-  // }
 }
 
 export default Favorites;

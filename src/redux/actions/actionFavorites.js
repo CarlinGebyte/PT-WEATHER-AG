@@ -9,7 +9,6 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-import uuid from "react-uuid";
 import { BD } from "../../firebase/firebaseConfig";
 import { typesFavorites } from "../types/types";
 
@@ -49,13 +48,6 @@ export const editAsync = (code, favorite) => {
         dispatch(editSync(favorite));
         dispatch(listAsync());
       });
-      // const newFavorite = await updateDoc(
-      //   collection(BD, "FavoriteLocations"),
-      //   doc(favorite.id),
-      //   favorite
-      // ).then(() => {
-      //   dispatch(editSync(favorite));
-      // });
     } catch (error) {
       console.log(error);
     }
@@ -81,11 +73,6 @@ export const deleteAsync = (id) => {
 
       dispatch(deleteSync(id));
       dispatch(listAsync());
-      // const newFavorite = await deleteDoc(
-      //   collection("FavoriteLocations"),
-      //   doc(favorite.id)
-      // );
-      // dispatch(deleteSync(favorite));
     } catch (error) {
       console.log(error);
     }
